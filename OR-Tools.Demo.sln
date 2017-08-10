@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLinearOptimizationExample", "SimpleLinearOptimizationExample\SimpleLinearOptimizationExample.csproj", "{BCFE4BB8-A060-4EC2-B85F-A39BD3984E82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSPExample", "TSPExample\TSPExample.csproj", "{E61A2DBD-BE2B-429C-AB2A-57C065217598}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCFE4BB8-A060-4EC2-B85F-A39BD3984E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFE4BB8-A060-4EC2-B85F-A39BD3984E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFE4BB8-A060-4EC2-B85F-A39BD3984E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFE4BB8-A060-4EC2-B85F-A39BD3984E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61A2DBD-BE2B-429C-AB2A-57C065217598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61A2DBD-BE2B-429C-AB2A-57C065217598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61A2DBD-BE2B-429C-AB2A-57C065217598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61A2DBD-BE2B-429C-AB2A-57C065217598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
