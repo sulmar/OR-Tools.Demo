@@ -9,10 +9,37 @@ namespace TSPExample
 {
     class ConstantCallback : NodeEvaluator2
     {
+
         public override long Run(int i, int j)
         {
             return 1;
         }
+    }
+
+    class RandomManhattan : NodeEvaluator2
+    {
+        private int[] xs;
+        private int[] ys;
+
+        public RandomManhattan(int size = 10, int seed = 0)
+        {
+            this.xs = new int[size];
+            this.ys = new int[size];
+
+            Random generator = new Random(seed);
+
+            for (int i = 0; i < size; ++i)
+            {
+                xs[i] = generator.Next(1000);
+                ys[i] = generator.Next(1000);
+            }
+        }
+
+        public override long Run(int i, int j)
+        {
+            return Math.Abs(xs[i] - xs[j]) + Math.Abs(ys[i] - ys[j]);
+        }
+
     }
 
     class DistanceCallback : NodeEvaluator2
