@@ -11,15 +11,34 @@ namespace TSPExample
     {
         static void Main(string[] args)
         {
-            VRPTest();
+            Test2();
+
+            Test1();
 
             Test();
         }
 
-        private static void VRPTest()
+
+        private static void Test2()
         {
             int[,] locations =
-            {
+           {
+               {82, 76}, {96, 44}, {50, 5}, {49, 8}
+            };
+
+
+            int[] demands = {0, 49, 21, 50 };
+
+            int num_vehicles = 3;
+
+            VRP(locations, demands, num_vehicles);
+
+        }
+
+        private static void Test1()
+        {
+            int[,] locations =
+           {
                {82, 76}, {96, 44}, {50, 5}, {49, 8}, {13, 7}, {29, 89}, {58, 30}, {84, 39},
                {14, 24}, {12, 39}, {3, 82}, {5, 10}, {98, 52}, {84, 25}, {61, 59}, {1, 65},
                {88, 51}, {91, 2}, {19, 32}, {93, 3}, {50, 93}, {98, 14}, {5, 42}, {42, 9},
@@ -30,9 +49,19 @@ namespace TSPExample
             int[] demands = {0, 19, 21, 6, 19, 7, 12, 16, 6, 16, 8, 14, 21, 16, 3, 22, 18,
              19, 1, 24, 8, 12, 4, 8, 24, 24, 2, 20, 15, 2, 14, 9 };
 
+            int num_vehicles = 5;
+
+            VRP(locations, demands, num_vehicles);
+
+        }
+
+        private static void VRP(int[,] locations, int[] demands, int num_vehicles)
+        {
+           
+
             int num_locations = locations.GetLength(0);
             int depot = 0;    // The depot is the start and end point of each route.
-            int num_vehicles = 5;
+           
 
             // Create routing model
             if (locations.Length > 0)
@@ -46,7 +75,7 @@ namespace TSPExample
 
                 var distanceCallback = new DistanceLocationsCallback(locations);
 
-                Display(distanceCallback.matrix);
+              //  Display(distanceCallback.matrix);
 
                 
                 routing.SetArcCostEvaluatorOfAllVehicles(distanceCallback);
@@ -116,11 +145,6 @@ namespace TSPExample
                         // Console.WriteLine($"Route: {route}");
 
                     }
-
-
-
-
-
                 }
                 else
                 {
